@@ -118,6 +118,12 @@ class BukuController extends Controller
         return redirect('buku');
     }
 
+    public function lihat($id)
+    {
+        $row = Buku::findOrFail($id);
+        return view('buku.lihat', compact('row'));
+    }
+
     public function search (Request $request)
     {
     $keyword = $request->search;

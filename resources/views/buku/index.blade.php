@@ -20,6 +20,7 @@
                 <td>KATEGORI</td>
                 <td>PENERBIT</td>
                 <td>EDIT</td>
+                <td>LIHAT</td>
                 <td>HAPUS</td>
             </tr>
             @foreach($rows as $row)
@@ -28,7 +29,8 @@
                 <td>{{ $row->buku_judul }}</td>
                 <td>{{ $row->buku_kategori }}</td>
                 <td>{{ $row->buku_penerbit }}</td>
-                <td><a href="{{ url('buku/' . $row->buku_id . '/edit') }}" class="btn btn-primary">Edit </a></td>
+                <td><a href="{{ url('buku/' . $row->buku_id . '/edit') }}" class="btn btn-warning">Edit </a></td>
+                <td><a href="{{ url('buku/' . $row->buku_id . '/lihat') }}" class="btn btn-success">Lihat</a></td>
                 <td>
                     <form action="{{ url('buku/' . $row->buku_id) }}" method="POST">
                         <input name="_method" type="hidden" value="DELETE">

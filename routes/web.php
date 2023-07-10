@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
+Route::get('buku/{id}/lihat','BukuController@lihat');
 Route::get('/buku/search', 'BukuController@search')->name('search'); 
 Route::delete('buku/{id}', 'BukuController@destroy');
 Route::get('buku/{id}/edit', 'BukuController@edit'); 
